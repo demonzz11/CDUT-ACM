@@ -11,13 +11,10 @@ title: F - 1122 Subsequence 2
 ## trick
 
 - 1.取出的 1122 串一定是偶数，设长度为 2k,固定住小数的最后一个位置，左右两边可以选择的数字就是 k-1,k 个，为了保持对应关系，我们同时取 i 个。
-- 2.可以得到我们要求的柿子
-  $$
-  \sum_{i=1}^{\min\{L,R\}} \binom{L}{i}\binom{R}{i}= \sum_{i=1}^{\min\{L,R\}} \binom{L}{i}\binom{R}{R-i}= \binom{L+R}{R}
-  $$  
-  
+- 2.可以得到我们要求的柿子    
+$$\sum_{i=1}^{\min(L,R)} \binom{L}{i}\binom{R}{i} = \sum_{i=1}^{\min(L,R)} \binom{L}{i}\binom{R}{R-i} = \binom{L+R}{R}$$  
   用到了[范德蒙德卷积](https://oi-wiki.org/math/combinatorics/vandermonde-convolution/)化简
-- 3.剩下了利用前缀和$ O(1) $求就可以了
+- 3.剩下了利用前缀和 $O(1)$ 求就可以了
 
 ## 代码
 
@@ -80,3 +77,4 @@ int main() {
   return 0;
 }
 ```
+
