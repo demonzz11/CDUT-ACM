@@ -14,13 +14,14 @@ title: F - 1122 Subsequence 2
 - 2.可以得到我们要求的柿子
   $$
   \sum_{i=1}^{\min\{L,R\}} \binom{L}{i}\binom{R}{i}= \sum_{i=1}^{\min\{L,R\}} \binom{L}{i}\binom{R}{R-i}= \binom{L+R}{R}
-  $$
+  $$  
+  
   用到了[范德蒙德卷积](https://oi-wiki.org/math/combinatorics/vandermonde-convolution/)化简
 - 3.剩下了利用前缀和$ O(1) $求就可以了
 
 ## 代码
 
-```
+```c++
 #include <bits/stdc++.h>
 
 using i64 = long long;
@@ -79,4 +80,3 @@ int main() {
   return 0;
 }
 ```
-
